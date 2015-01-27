@@ -1,5 +1,6 @@
-This is a Subversion repository; use the 'svnadmin' and 'svnlook' 
-tools to examine it.  Do not add, delete, or modify files here 
-unless you know how to avoid corrupting the repository.
+Proyecto de investigación.
+Consiste en mostrar la taxonomía de suelos de la región de Cuitláhuac Ver.
+así como sus características, datos climáticos, temperatura, humedad, viento
+entre otras características.
+Proyecto en desarrollo.
 
-Visit http://subversion.apache.org/ for more information.
