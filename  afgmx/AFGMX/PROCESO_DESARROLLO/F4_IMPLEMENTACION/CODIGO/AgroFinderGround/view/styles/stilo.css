@@ -1,0 +1,399 @@
+@font-face{ 
+	font-family: 'OpenSans_bold';
+	src: url('fonts/OpenSans/opensans_bold/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans/opensans_bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'OpenSans_bolditalic';
+	src: url('fonts/OpenSans/opensans_bolditalic/OpenSans-BoldItalic-webfont.eot');
+    src: url('fonts/OpenSans/opensans_bolditalic/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_bolditalic/OpenSans-BoldItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_bolditalic/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_bolditalic/OpenSans-BoldItalic-webfont.svg#open_sansbolditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'OpenSans_extrabold';
+	src: url('fonts/OpenSans/opensans_extrabold/OpenSans-ExtraBold-webfont.eot');
+    src: url('fonts/OpenSans/opensans_extrabold/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_extrabold/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_extrabold/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_extrabold/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'OpenSans_italic';
+	src: url('fonts/OpenSans/opensans_italic/OpenSans-Italic-webfont.eot');
+    src: url('fonts/OpenSans/opensans_italic/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'OpenSans_light';
+	src: url('fonts/OpenSans/opensans_light/OpenSans-Light-webfont.eot');
+    src: url('fonts/OpenSans/opensans_light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{ 
+	font-family: 'OpenSans_lightitalic';
+	src: url('fonts/OpenSans/opensans_lightitalic/OpenSans-LightItalic-webfont.eot');
+    src: url('fonts/OpenSans/opensans_lightitalic/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_lightitalic/OpenSans-LightItalic-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_lightitalic/OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_lightitalic/OpenSans-LightItalic-webfont.svg#open_sanslightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+}
+@font-face{ 
+	font-family: 'OpenSans_regular';
+	src: url('fonts/OpenSans/opensans_regular/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	vertical-align: baseline;
+	font-family: 'OpenSans_regular';
+	color: #1d1d1d;
+}
+header, section, footer, aside, nav, article{
+	
+
+} 
+a{
+	text-decoration: none;
+	cursor: pointer;
+	font-family: 'opensans_light'!important;
+}
+body{
+	text-align: center;
+	background: #efefef;
+	width: 100%;
+	min-width: auto;
+}
+.container{
+	background: transparent;
+	background: rgba(0,0,0,0.0);
+	min-width: auto;
+	max-width: 1920px;
+	margin: 0px auto;
+	text-align: left;
+	border: solid 1px rgba(0,0,0,0.1);
+}
+header{
+	background: #16A085;
+	background: url(images/noise.png),#16A085;
+	height: 90px;
+}
+header #logo{
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+hgroup #title{
+	position: absolute;
+	font-family: 'opensans_bold';
+	font-size: 28px;
+	color: #FFF;
+	text-shadow: 1px 2px 0px rgba(20,75,12,0.9);
+	margin-left: 84px;
+	margin-top: 28px;
+	width: auto;
+}
+hgroup h2{
+	position: absolute;
+	font-family: 'opensans_lightitalic';
+	font-size: 14px;
+	color: #f6f6f6;
+	text-shadow: 1px 1px 0px rgba(20,75,12,0.9);
+	margin-left: 84px;
+	margin-top: 63px;
+	letter-spacing: 1px;
+}
+a.hiddenanchor{
+	display: none;
+}
+#content{
+	position: relative;
+	float: left;
+	width: 100%;
+	background: transparent;
+	background: rgba(0,0,0,0.0);
+}
+#actions{
+	background: linear-gradient(#bdbdbd,#dddddd);
+	height: 720px;
+	max-width: 100%;
+	min-width: auto;
+	border-left: solid 2px #FF0000;
+	margin-left: 230px;
+}
+#map{
+	width: 100%;
+	height:  96%;
+	margin-top:  -10px;
+}
+.actions-container{
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+.breadcrumb {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  background: url(images/noise.png), rgba(255,255,255,0.6);
+  border: none !important;
+  margin-bottom: 0px;
+  box-shadow: -1px 3px 1px rgba(0,0,0,0.5);
+}
+.breadcrumb li a {
+  margin-left: 10px;
+  display: inline!important;
+}
+.breadcrumb li{
+	display: inline!important;
+}
+.breadcrumb li p {
+  font-size: 12.5px !important;
+  font-weight: 600;
+  color: #349b73;
+  display: inline!important;
+}
+.breadcrumb li a{
+	color: #615f5f;
+	font-weight: 600; 
+	display: inline!important;
+}
+.breadcrumb li a span{
+	color: #615f5f;
+	margin-left: -10px;
+	margin-right: 10px;
+}
+.breadcrumb li .active {
+  font-weight: 800;
+  font-size: 14px;
+  color: #515050;
+}
+.breadcrumb > li + li:before {
+  padding: 0 5px!important;
+  color: #515050!important;
+  font-family: FontAwesome!important;
+  content: "\f105"!important;
+}
+
+.grid.simple .grid-title .tools {
+  margin-top: -20px;
+  position: relative;
+  text-align: center;
+}
+.grid-title .tools,
+.grid-title .actions {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-top: 6px;
+  float: right;
+}
+.grid.simple .grid-title .tools > a.collapse,
+.grid.solid .grid-title .tools > a.collapse {
+  background-position: -95px -40px;
+  width: 9px;
+  height: 7px;  
+}
+.grid.simple .grid-body.no-border {
+  border: 0px;
+  padding-top: 1px;
+}
+.grid.simple .grid-body h4 {
+  color: #282323;
+}
+.grid.simple .grid-body h3 {
+  color: #282323;
+}
+.grid.simple .grid-body {
+  background-color: #ffffff;
+  padding: 26px;
+  border: 1px solid #dddddd;
+  color: #6f7b8a;
+}
+.grid-body:after {
+	display: table;
+	content: " ";
+}
+.grid.simple .grid-body.no-padding {
+  padding: 0px;
+}
+
+.grid {
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  padding: 0px;
+}
+.grid.simple .grid-title .tools > a.collapse,
+.grid.solid .grid-title .tools > a.collapse {
+  background-position: -95px -40px;
+  width: 9px;
+  height: 7px;
+  top: -5px;
+}
+.grid.simple .grid-title .tools a, .grid.solid .grid-title .tools a {
+position: relative;
+background:  url(images/portlet-tray.png); no-repeat;
+transition: all 0.1s linear 0s;
+}
+.grid-title .tools > a {
+display: inline-block;
+height: 16px;
+margin-left: 5px;
+}
+
+.grid.simple {
+	padding: 0px !important;
+}
+.grid.simple  .grid-title .no-border {
+	border: 0px;
+	border-bottom: 0px;
+}
+.grid.simple .grid-title {
+	padding: 14px 15px 7px 15px;
+	border-bottom: 1px solid #eee;
+	color: #282323 !important;
+	background-color: #ffffff;
+	margin-bottom: 0px;
+	border: 1px solid #dddddd;
+	border-bottom: 0px;
+	text-align: left;
+}
+.grid-title h4{
+	color:  #3c3d39;
+}
+.grid-title .semi-bold{
+	color: #73746f;
+	font-weight: 600;
+}
+
+.menu{
+	position: absolute;
+	float: left;
+	width: 230px;
+	height: 100%;
+	background: linear-gradient(#444, #222);
+	z-index: 2;
+	margin-top: -720px;
+	color: #ededed!important;
+}
+.menu nav{
+	text-align: justify;
+	margin-left: 3px;
+	margin-top: 30px;
+	color: #ededed!important;
+}
+.menu nav ul li{
+	display: block;
+	list-style: none;
+	cursor: pointer;
+	color: #ededed!important;
+}
+footer{
+	clear: both;
+	height: 110px;
+	z-index: 3;
+	padding: 0;
+	margin: 0;
+}
+#pagefooter_container{
+	background: #569455;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-ui{
+	display: inline-block;
+  	border: 2px solid #e5e9ec;
+  	color:  #E4E4E4;
+  	padding: 2px 8px;
+  	border-radius: 15px;
+  	font-weight: bold;
+  	font-size: 12px;
+	background: url(images/noise.png);
+}
+.btn-ui small{
+	color: #E4E4E4;
+  	font-weight: bold;
+  	font-size: 12px;
+}
+.btn-ui:hover{
+	border: 2px solid rgba(255, 255, 255, 0.1);
+  	background-color: rgba(255, 255, 255, 0.6);
+  	color: #6C6C6C;
+}
+.btn-ui:hover small{
+	color: #6C6C6C;
+}
+.btn-ui:focus, .btn-ui:active{
+	border: 2px solid rgba(255, 255, 255, 0.1);
+  	background-color: rgba(215, 215, 215, 0.6);
+  	color: #ededed!important;
+}
+.btn-icon{
+	font-family: 'WebSymbolsRegular';
+}
+.btn-ui small{
+	font-size: 14px;
+}
+.btn-ui:hover .btn-icon{
+	-webkit-animation: moveFromRight 400ms ease;
+	-moz-animation: moveFromRight 400ms ease;
+	-o-animation: moveFromRight 400ms ease;
+	-ms-animation: moveFromRight 400ms ease;
+	animation: moveFromRight 400ms ease;
+	color: #6C6C6C;
+}
+.normal{
+	font-weight: normal;
+}
+.bold{
+	font-weight: bold;
+}
+.small{
+	font-size: 12px;
+}
+.medium{
+	font-size: 14px;
+}
+.small-grey{
+	font-size: 12px;
+	color: #80836f;
+}
+input[type="text"]{
+	background: #FFF;
+	box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.1);
+	border: solid 1px rgba(0,,0,0,0.5);
+	border-radius:  0.05em;
+	height: 22px;
+	font-size: 14px;
+}
