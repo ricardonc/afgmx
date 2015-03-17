@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!--[if lt IE7]><html lang="es" class="no-js ie6 lt8"><![endif]-->
+<!--[if IE 7]>	<html lang="es" class="no-js ie7 lt8"><![endif]-->
+<!--[if IE 8]>	<html lang="es" class="no-js ie8 lt8"><![endif]-->
+<!--[if IE 9]>	<html lang="es" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="es" style="overflow-y: visible;" id="html-page"> 
+<!--<![endif]-->
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>***Agro Finder Ground***</title>
+		<meta name="description" content="Aplicación de consulta de tipos de suelo y de cultivo">
+		<meta name="keywords" content="agro finder ground","agro","finder","ground","consulta","cultivos","consulta de suelos",
+		"consulta","suelos","consulta de cultivos">
+		<link rel="shortcut icon" href="view/styles/images/favicon.ico">		
+
+		<link rel="stylesheet" href="view/styles/stilo.css">
+		<link rel="stylesheet" href="view/styles/login.css"/>
+		<link rel="stylesheet" href="view/styles/animate-custom.css"/>
+		<link rel="stylesheet" href="view/styles/ns-style-other.css"/>
+		<link rel="stylesheet" href="view/styles/responsive.css"/>
+		<link rel="stylesheet" href="view/boostrapv3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="view/styles/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="view/styles/animate.min.css"/>
+
+		<!-- plugins-->
+		<script type="text/javascript" src="view/js/plugins/inputfile.js"></script>
+
+
+		<script type="text/javascript" src="view/js/html5.js"></script>
+		<script type="text/javascript" src="view/js/modernizr-1.5.min.js"></script>
+		<script type="text/javascript" src="view/js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="view/js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="view/js/jquery.easing.1.3.js"></script>
+	</head>
+	<body onload="ini()" class="animated fadeInUp">
+	<script>
+		$(document).ready(function(){
+			$('#txtusuario1').val("");
+			$('#txtcontrasenia1').val("");
+			$('#txtconf').val("");
+			$('#txtcorreo').val("");
+			$('#txtnombre').val("");
+			$('#txtapellidos').val("");
+
+		});
+		$(window).load(function(){
+			$('#txtusuario1').val("");
+			$('#txtcontrasenia1').val("");
+			$('#txtconf').val("");
+			$('#txtcorreo').val("");
+			$('#txtnombre').val("");
+			$('#txtapellidos').val("");	
+		});
+	</script>
+		<div style="overflow: hidden; opacity: 0; width: 0px; height:0px;"><img src="view/styles/images/logo3.png"/></div>
+		<div class="container">
+			<!--Cabecera del documento html-->
+			<header id="banner" class='animated slideInLeft'>
+				<div id="logo">
+				<img src="view/styles/images/LOGO3.png" width="80px"/>
+				</div>
+				<hgroup>
+					<h1 id="title">Agro Finder Ground</h1>
+					<h2>Sistema de consulta de suelos de cultivo</h2>
+				</hgroup>
+			</header>
+
+			<section id="content">
+				<a class="hiddenanchor" id="toregister"></a>
+            	<a class="hiddenanchor" id="tologin"></a>
+ 					 <div id="wrapper">          	
+						<div id="login" class="animate">
+							<form action="controller/SessionController.php" autocomplete="off" method="post" id="frmlogin">
+								<h1>Iniciar sesión</h1>
+								<br/>
+								<p style="padding-left: 11px;padding-right: 11px; text-align: justify;font-size: 12px;margin-top:-20px">Inicie sesión con su cuenta de usuario para acceder al sistema.</p>
+								<br/>
+								<label for="txtusuario">Tu usuario o correo electrónico</label>
+								<input type="text" id="txtusuario" name="txtusuario" placeholder="eg. mi_usuario" autofocus="true" required="required"/>
+								<label for="txtcontrasenia">Tu contraseña</label>
+								<input type="password" id="txtcontrasenia" name="txtcontrasenia" placeholder="eg. X1.!90edf_2306" required="required"/>
+								<br/>
+								<button type="submit" class="btn-ui" id="btnlogin" style="margin-top:28px">
+									<span class="btn-icon fa fa-arrow-circle-right"></span>
+									<small>Acceder</small>
+								</button>
+								<p class="footer" style="margin-top:35px!important"> ¿No tienes una cuenta? <a href="#toregister" class="register">Registrarme :)</a></p>
+							</form>
+						</div>
+						<div id="register" class="animate">
+							<form action="controller/UserController.php" autocomplete="off" method="post" id="frmregister" enctype="multipart/form-data" onsubmit="return validar(this)" name="formregister">
+								<h1>Registro</h1>
+								<br/>
+								<p id="state" style="color: #E71919; font-weight:bold; font-size: 12px;margin-top:-25px">* Campos obligatorios.</p>
+								<br/>
+								<label for="txtusuario1" style="padding-top:-20px!important">*Nombre de usuario</label>
+								<input type="text" id="txtusuario1" name="txtusuario1" placeholder="su nombre de usuario" required="required"/>
+								<div id="validate-info" style="width:18px; display: inline; box-shadow: 0px 0px rgba(0,0,0,0.0);border: none; margin-left: -26px;position: absolute; margin-top:24px;">
+								</div>
+								<label for="txtcontrasenia1">*Contraseña</label>
+								<input type="password" id="txtcontrasenia1" name="txtcontrasenia1" placeholder="su contraseña" required="required"/>
+								<label for="txtconf">*Confirmar contraseña</label>
+								<input type="password" id="txtconf" name="txtconf" placeholder="confirme su contraseña" required="required"/>
+								<label for="txtcorreo">*Correo electrónico</label>
+								<input type="email" id="txtcorreo" name="txtcorreo" placeholder="sucorreo@mail.com" required="required"/>
+								<label for="txtnombre">*Nombre(s)</label>
+								<input type="text" id="txtnombre" name="txtnombre" placeholder="su nombre(s)" required="required"/>
+								<label for="txtapellidos">*Apellidos</label>
+								<input type="text" id="txtapellidos" name="txtapellidos" placeholder="sus apellidos" required="required"/>
+								<br/>
+								<label for="txtimagen">Imagen de perfil</label>
+								<input type="file" accept="images png|jpeg|jpg|gif" onchange="checkear(this)" id="imagen" name="imagen" />
+								<iframe src="view/ajax/visor.php" width="90px" height="90px" style="display:inline;margin-left: 80px;border:none; margin-bottom: 10px" id="ver" name="ver"></iframe>
+								<br/>
+								<button type="submit" class="btn-ui" id="btnregister">
+									<span class="btn-icon fa fa-hand-o-right"></span>
+									<small>Registrarme</small>
+								</button>
+								<p class="footer">¿Ya estas registrado? <a href="#tologin" class="register">Iniciar sesión</a></p>
+							</form>
+						</div>
+					</div>	
+			</section>
+			<!--Pie de página-->
+			<footer id="pagefooter">
+                <div id="pagefooter_container">
+                    
+                </div>            
+            </footer>
+		</div>
+		<script src="view/js/classie.js"></script>
+		<script src="view/js/notificationFx.js"></script>
+		<script>
+			(function() {
+				var txt = document.getElementById( 'txtusuario' );
+				var btn= document.getElementById('btnlogin');
+
+				$("#txtusuario").keyup(function() {
+					classie.add( txt, 'active' );
+						for(i=0;i<$("#txtusuario").val().length;i++){
+							if($("#txtusuario").val().charAt(i)==" "){
+
+								setTimeout( function() {
+									classie.remove( txt, 'active' );
+									var notification = new NotificationFx({
+										message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>El nombre de usuario no puede contener espacios en blanco.</p></div>',
+										layout : 'other',
+										ttl : 4000,
+										effect : 'thumbslider',
+										type : 'warning',
+										onClose : function() {
+											
+										}
+									});
+									$("#txtusuario").val("");
+									notification.show();
+								}, 300 );
+
+							}else{
+								if($("#txtusuario").val().charAt(i)=="*" || $("#txtusuario").val().charAt(i)=="." 
+								 ||$("#txtusuario").val().charAt(i)=="|" || $("#txtusuario").val().charAt(i)==";"
+								 ||$("#txtusuario").val().charAt(i)=="<" || $("#txtusuario").val().charAt(i)==">"
+								 ||$("#txtusuario").val().charAt(i)=="=" || $("#txtusuario").val().charAt(i)=="?"
+								 ||$("#txtusuario").val().charAt(i)=="'" || $("#txtusuario").val().charAt(i)=="/"
+								 ||$("#txtusuario").val().charAt(i)=="-" || $("#txtusuario").val().charAt(i)=="%"
+								 ||$("#txtusuario").val().charAt(i)=="+" || $("#txtusuario").val().charAt(i)=="&"){
+									setTimeout( function() {
+										classie.remove( txt, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>El nombre de usuario no puede contener ninguno de los siguientes caracteres: . * ; | < > = ? / + & - %</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtusuario").val("");
+										notification.show();
+									}, 300 );
+
+								}
+							}
+						}		
+
+				} );
+			})();
+		</script>
+		<script>
+			(function() {
+				var txt1 = document.getElementById( 'txtusuario1' );
+				var btn= document.getElementById('btnlogin');
+				$("#txtusuario1").blur(function(){
+					classie.add(txt1,'active');
+					if($("#txtusuario1").val().length<5 && $("#txtusuario1").val()!=""){
+						setTimeout( function() {
+							classie.remove( txt1, 'active' );
+							var notification = new NotificationFx({
+								message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>El nombre de usuario debe contener un mínimo de 5 caracteres.</p></div>',
+								layout : 'other',
+								ttl : 4000,
+								effect : 'thumbslider',
+								type : 'warning',
+								onClose : function() {
+										
+								}
+							});
+						notification.show();
+						$('#txtusuario1').css({
+							"border" : "solid 2px #f52020",
+						});
+						document.getElementById('btnregister').disabled=true;
+						}, 300 );
+					}else{
+						document.getElementById('btnregister').disabled=false;
+						$('#txtusuario1').css({
+							"border" : "solid 1px rgba(0,0,0,0.5)",
+						});
+					}
+				});
+				$("#txtcontrasenia1").blur(function(){
+					classie.add(txt1,'active');
+					if($("#txtcontrasenia1").val().length<5 && $("#txtcontrasenia1").val()!=""){
+						setTimeout( function() {
+							classie.remove( txt1, 'active' );
+							var notification = new NotificationFx({
+								message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>La contraseña debe contener un mínimo de 5 caracteres.</p></div>',
+								layout : 'other',
+								ttl : 4000,
+								effect : 'thumbslider',
+								type : 'warning',
+								onClose : function() {
+										
+								}
+							});
+						notification.show();
+						$('#txtcontrasenia1').css({
+							"border" : "solid 2px #f52020",
+						});
+						document.getElementById('btnregister').disabled=true;
+						}, 300 );
+					}else{
+						document.getElementById('btnregister').disabled=false;
+						$('#txtcontrasenia1').css({
+							"border" : "solid 1px rgba(0,0,0,0.5)",
+						});
+					}
+				});
+				$("#txtnombre").blur(function(){
+					classie.add(txt1,'active');
+					if($("#txtnombre").val().length<3 && $("#txtnombre").val()!=""){
+						setTimeout( function() {
+							classie.remove( txt1, 'active' );
+							var notification = new NotificationFx({
+								message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tú nombre debe contener más de 3 caracteres.</p></div>',
+								layout : 'other',
+								ttl : 4000,
+								effect : 'thumbslider',
+								type : 'warning',
+								onClose : function() {
+										
+								}
+							});
+						notification.show();
+						$('#txtnombre').css({
+							"border" : "solid 2px #f52020",
+						});
+						document.getElementById('btnregister').disabled=true;
+						}, 300 );
+					}else{
+						document.getElementById('btnregister').disabled=false;
+						$('#txtnombre').css({
+							"border" : "solid 1px rgba(0,0,0,0.5)",
+						});
+					}
+				});
+				$("#txtapellidos").blur(function(){
+					classie.add(txt1,'active');
+					if($("#txtapellidos").val().length<3 && $("#txtapellidos").val()!=""){
+						setTimeout( function() {
+							classie.remove( txt1, 'active' );
+							var notification = new NotificationFx({
+								message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tú(s) apellido(s) debe(n) contener más de 3 caracteres.</p></div>',
+								layout : 'other',
+								ttl : 4000,
+								effect : 'thumbslider',
+								type : 'warning',
+								onClose : function() {
+										
+								}
+							});
+						notification.show();
+						$('#txtapellidos').css({
+							"border" : "solid 2px #f52020",
+						});
+						document.getElementById('btnregister').disabled=true;
+						}, 300 );
+					}else{
+						document.getElementById('btnregister').disabled=false;
+						$('#txtapellidos').css({
+							"border" : "solid 1px rgba(0,0,0,0.5)",
+						});
+					}
+				});
+				$("#txtusuario1").keyup(function() {
+					classie.add( txt1, 'active' );
+						for(i=0;i<$("#txtusuario1").val().length;i++){
+							if($("#txtusuario1").val().charAt(i)==" "){
+
+								setTimeout( function() {
+									classie.remove( txt1, 'active' );
+									var notification = new NotificationFx({
+										message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>El nombre de usuario no puede contener espacios en blanco.</p></div>',
+										layout : 'other',
+										ttl : 4000,
+										effect : 'thumbslider',
+										type : 'warning',
+										onClose : function() {
+											
+										}
+									});
+									$("#txtusuario1").val("");
+									$('#txtusuario1').css({
+											"border" : "solid 2px #f52020",
+										});
+									notification.show();
+								}, 300 );
+							}else{
+								if($("#txtusuario1").val().charAt(i)=="*" || $("#txtusuario1").val().charAt(i)=="." 
+								 ||$("#txtusuario1").val().charAt(i)=="|" || $("#txtusuario1").val().charAt(i)==";"
+								 ||$("#txtusuario1").val().charAt(i)=="<" || $("#txtusuario1").val().charAt(i)==">"
+								 ||$("#txtusuario1").val().charAt(i)=="-" || $("#txtusuario1").val().charAt(i)=="%"
+								 ||$("#txtusuario1").val().charAt(i)=="=" || $("#txtusuario1").val().charAt(i)=="?"
+								 ||$("#txtusuario1").val().charAt(i)=="ñ" || $("#txtusuario1").val().charAt(i)=="+"
+								 ||$("#txtusuario1").val().charAt(i)=="'" || $("#txtusuario1").val().charAt(i)=="/"
+								 ||$("#txtusuario1").val().charAt(i)==":" || $("#txtusuario1").val().charAt(i)=="¿"){
+									setTimeout( function() {
+										classie.remove( txt1, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>El nombre de usuario no puede contener ninguno de los siguientes caracteres: . * ; | < > = ? ¿ : /. ~ +</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtusuario1").val("");
+										$('#txtusuario1').css({
+											"border" : "solid 2px #f52020",
+										});
+										notification.show();
+									}, 300 );
+
+								}
+							}
+						}		
+
+				} );
+			})();
+		</script>
+		<script>
+		    (function() {
+				var bttn = document.getElementById( 'btnregister' );
+
+					bttn.addEventListener( 'click', function() {
+						classie.add( bttn, 'active' );
+						if($('#txtconf').val() != $('#txtcontrasenia1').val()){
+							setTimeout( function() {
+								classie.remove( bttn, 'active' );
+							
+								var notification = new NotificationFx({
+									message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Las contraseñas no coinciden por favor verifique.</p></div>',
+										layout : 'other',
+										ttl : 4000,
+										effect : 'thumbslider',
+										type : 'warning',
+									onClose : function() {
+										bttn.disabled = false;
+									}
+								});
+								$('#txtconf').css({
+									"border" : "solid 2px #f52020",
+								});									
+								$('#txtcontrasenia1').css({
+									"border" : "solid 2px #f52020",
+								});
+								$('#txtcontrasenia1').val("");
+								notification.show();
+
+							}, 200 );
+							this.disabled = true;
+						}
+					} );
+			})();
+		</script>
+		<script>
+		    (function() {
+				var txtem = document.getElementById( 'txtcorreo' );
+
+					$("#txtcorreo").keydown(function() {
+						classie.add( txtem, 'active' );
+						if($('#txtconf').val() != $('#txtcontrasenia1').val()){
+							setTimeout( function() {
+								classie.remove( txtem, 'active' );
+								var notification = new NotificationFx({
+									message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Las contraseñas no coinciden por favor verifique.</p></div>',
+										layout : 'other',
+										ttl : 4000,
+										effect : 'thumbslider',
+										type : 'warning',
+									onClose : function() {
+									}
+								});
+								$('#txtconf').css({
+									"border" : "solid 2px #f52020",
+								});
+								$('#txtcontrasenia1').css({
+									"border" : "solid 2px #f52020",
+								});
+								$('#txtconf').val("");
+								notification.show();
+							}, 200 );
+						}else{
+							$('#txtconf').css({
+									"border" : "solid 1px rgba(0,0,0,0.4)",
+								});
+								$('#txtcontrasenia1').css({
+									"border" : "solid 1px rgba(0,0,0,0.4)",
+								});
+						}
+					} );
+			})();
+		</script>
+		<script>
+			(function() {
+				var txt1 = document.getElementById( 'txtnombre' );
+				var btn= document.getElementById('btnregister');
+
+				$("#txtnombre").keyup(function() {
+					classie.add( txt1, 'active' );
+						for(i=0;i<$("#txtnombre").val().length;i++){
+								if($("#txtnombre").val().charAt(i)=="*" || $("#txtnombre").val().charAt(i)=="." 
+								 ||$("#txtnombre").val().charAt(i)=="|" || $("#txtnombre").val().charAt(i)==";"
+								 ||$("#txtnombre").val().charAt(i)=="<" || $("#txtnombre").val().charAt(i)==">"
+								 ||$("#txtnombre").val().charAt(i)=="=" || $("#txtnombre").val().charAt(i)=="?"
+								 ||$("#txtnombre").val().charAt(i)=="'" || $("#txtnombre").val().charAt(i)=="/"
+								 ||$("#txtnombre").val().charAt(i)=="&" || $("#txtnombre").val().charAt(i)=="°"
+								 ||$("#txtnombre").val().charAt(i)=="_" || $("#txtnombre").val().charAt(i)=="°"
+								 ||$("#txtnombre").val().charAt(i)=="-" || $("#txtnombre").val().charAt(i)=="%"){
+									setTimeout( function() {
+										classie.remove( txt1, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tu nombre no puede contener los siguientes caracteres: . * ; | < > = ? /. - % _ & - °</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtnombre").val("");
+										notification.show();
+									}, 300 );
+							}else if($("#txtnombre").val().charAt(i)=="0" || $("#txtnombre").val().charAt(i)=="1" 
+								 		||$("#txtnombre").val().charAt(i)=="2" || $("#txtnombre").val().charAt(i)=="3"
+								 		||$("#txtnombre").val().charAt(i)=="4" || $("#txtnombre").val().charAt(i)=="5"
+								 		||$("#txtnombre").val().charAt(i)=="7" || $("#txtnombre").val().charAt(i)=="6"
+								 		||$("#txtnombre").val().charAt(i)=="8" || $("#txtnombre").val().charAt(i)=="9"){
+								setTimeout( function() {
+										classie.remove( txt1, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tu nombre no puede contener datos númericos</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtnombre").val("");
+										notification.show();
+									}, 300 );
+							}
+						}		
+
+				} );
+			})();
+		</script>
+		<script>
+			(function() {
+				var txt1 = document.getElementById( 'txtapellidos' );
+				var btn= document.getElementById('btnregister');
+
+				$("#txtapellidos").keyup(function() {
+					classie.add( txt1, 'active' );
+						for(i=0;i<$("#txtapellidos").val().length;i++){
+								if($("#txtapellidos").val().charAt(i)=="*" || $("#txtapellidos").val().charAt(i)=="." 
+								 ||$("#txtapellidos").val().charAt(i)=="|" || $("#txtapellidos").val().charAt(i)==";"
+								 ||$("#txtapellidos").val().charAt(i)=="<" || $("#txtapellidos").val().charAt(i)==">"
+								 ||$("#txtapellidos").val().charAt(i)=="=" || $("#txtapellidos").val().charAt(i)=="?"
+								 ||$("#txtapellidos").val().charAt(i)=="'" || $("#txtapellidos").val().charAt(i)=="/"
+								 ||$("#txtapellidos").val().charAt(i)=="-" || $("#txtapellidos").val().charAt(i)=="_"){
+									setTimeout( function() {
+										classie.remove( txt1, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tu(s) apellido(s) no puede(n) contener los siguientes caracteres: . * ; | < > = ? / - _ .</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtapellidos").val("");
+										notification.show();
+									}, 300 );
+							}else if($("#txtapellidos").val().charAt(i)=="0" || $("#txtapellidos").val().charAt(i)=="1" 
+								 		||$("#txtapellidos").val().charAt(i)=="2" || $("#txtapellidos").val().charAt(i)=="3"
+								 		||$("#txtapellidos").val().charAt(i)=="4" || $("#txtapellidos").val().charAt(i)=="5"
+								 		||$("#txtapellidos").val().charAt(i)=="7" || $("#txtapellidos").val().charAt(i)=="6"
+								 		||$("#txtapellidos").val().charAt(i)=="8" || $("#txtapellidos").val().charAt(i)=="9"){
+								setTimeout( function() {
+										classie.remove( txt1, 'active' );
+										var notification = new NotificationFx({
+											message : '<div class="ns-thumb"><img src="view/styles/images/alert.png"/></div><div class="ns-content"><p>Tu(s) apellido(s) no puede(n) contener datos númericos</p></div>',
+											layout : 'other',
+											ttl : 4000,
+											effect : 'thumbslider',
+											type : 'warning',
+											onClose : function() {
+											}
+										});
+										$("#txtapellidos").val("");
+										notification.show();
+									}, 300 );
+							}
+						}		
+
+				} );
+			})();
+		</script>
+		<script>
+			$(document).ready(function(){
+				$("#txtusuario1").blur(function(){
+					if($("#txtusuario1").val()==""){
+
+					}else{
+						if($("#txtusuario1").val().length>4){
+							$("#validate-info").html('<img src="view/styles/images/loading.gif">').fadeOut(3000);
+							var txtusuario= $(this).val();
+							var datos= 'username='+txtusuario;
+							$.ajax({
+								type: "POST",
+								url: "view/ajax/userValidate.php",
+								data: datos,
+								success: function(data){
+									$("#validate-info").html(data).fadeIn(1000);
+								}
+							});
+						}
+					}
+				});
+			});
+		</script>
+		<script type="text/javascript" src="view/js/plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="view/js/plugins/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript">
+		var nice = false;
+		$(document).ready(function(){
+			  nice = $("html").niceScroll({cursorcolor: "#328d6e",cursoropacitymax:0.9,boxzoom:true,touchbehavior:false});
+		});
+		</script>
+	</body>
+</html>
